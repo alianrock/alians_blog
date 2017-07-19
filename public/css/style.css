@@ -1,3 +1,4 @@
+.wrap_bg,
 .wrap{
   position:absolute;
   left:0;
@@ -6,10 +7,19 @@
   bottom:0;
   text-align:center;
   line-height:100%;
+  background: url(../img/bg.jpeg) center center no-repeat;
+  background-size: cover;
+}
+.wrap_bg{
+  background: url(../img/package.png) no-repeat;
+  background-size: 100% 100%;
+  z-index:2;
 }
 .content{
   position: absolute;
   left:50%;
   top:50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
+.
