@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>数据清除</title>
+	<meta name = "format-detection" content = "telephone=no">
+    <meta name="copyright" content="极配，jeepei Inc.">
+	
+</head>
+<body>
+<div id="j_wrap" class = "g_wrapper"></div>
+<script>
+	function setCookie(name,value,time){
+     	var data = new Date();
+        data.setTime(data.getTime() + time);
+        document.cookie = name + "=" + value + ";expires =" + data.toGMTString();
+	}
+setCookie('JIPEI_USER_TOKEN','',-100000000000);
+
+</script>
+</body>
+</html>
