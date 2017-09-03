@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-chm">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Slide Demo</title>
+
+	<style>
+		body{height: 1000px;}
+		h1{font-family: "Helvetica Neue", Helvetica, Arial, 'Micorsoft Yahei', sans-serif;width: 70%;margin: 0 auto 10px;text-align: center;margin-top: 20px;line-height: 58px;font-size: 23px; border-bottom: 1px solid #ddd;color: #808080;}
+		.wrapper1,.wrapper2 {width: 100%;position: relative;height: 200px;margin: 0 auto;visibility:hidden;margin-top: 20px;}
+		.imgAry{width:100%;height: 100%;}
+		.imgAry li{height:100%;position: relative;}
+		.imgAry img{width: 100%;height:100%;display: block;}
+	</style>
+</head>
+<body>
+<h1>Slider-幻灯片</h1>
+<div class="wrapper1">
+	<ul class="imgAry" >
+		<li><img src="../images/1408219308583895419.jpg" alt="1"></li>
+		<li><img src="../images/1817202449744335681.jpg" alt="2"></li>
+		<li><img src="../images/6204762820111109095629050_640.jpg" alt="3"></li>
+		<li><img src="../images/6597343545054048507.jpg" alt="4"></li>
+		<li><img src="../images/Funny_Kitty_Balanc_e.jpg" alt="5"></li>
+	</ul>
+</div>
+<div class="wrapper2">
+	<ul class="imgAry" >
+		<li><img src="../images/1408219308583895419.jpg" alt="1"></li>
+		<li><img src="../images/1817202449744335681.jpg" alt="2"></li>
+	</ul>
+</div>
+
+
+<script src="../js/zepto.min.js"></script>
+<script src="../js/Slider.js"></script>
+<script>
+$(function(){
+	$.slider({
+		isLoop: false,  //是都循环播放
+		hasDot: true, //是否有点点
+		$el: $('.wrapper1'), //最外层的节点
+		isFullScreen:false, //是否全屏
+		autoSlide:true
+	});
+
+	$.slider({
+		isLoop: true,  //是都循环播放
+		hasDot: true, //是否有点点
+		$el: $('.wrapper2'), //最外层的节点
+		isFullScreen:false, //是否全屏
+		autoSlide:true	
+	});
+});
+</script>
+</body>
+</html>
