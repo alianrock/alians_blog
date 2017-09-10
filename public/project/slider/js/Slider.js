@@ -152,7 +152,7 @@
 				if(this.liLength < 2) this.setting.isLoop = false;
 				if(this.setting.autoSlide && !this.setting.isFullScreen && this.liLength > 1) this.setting.isLoop = true;//如果是自动播放，自动设置为循环播放
 				if(this.indexNow >= this.liLength) this.indexNow = this.liLength - 1;
-				
+				console.log(this.index)
 				//添加点点
 				this.appendDot();
 
@@ -212,16 +212,17 @@
 			},
 			appendDot: function(){
 				//生成点点
-				if(this.setting.hasDot && !this.$navli){
-					this.$el.append('<ul class="slide-nav"></ul>');
-					this.$nav = this.$el.find('.slide-nav');
+				if(this.setting.hasDot){
+					if (!this.$navli) {
+						this.$el.append('<ul class="slide-nav"></ul>');
+						this.$nav = this.$el.find('.slide-nav');
 
-					for(var i = 0; i < this.liLength; i++){
-						this.$nav.append('<li></li>');
+						for(var i = 0; i < this.liLength; i++){
+							this.$nav.append('<li></li>');
+						}
 					}
-
-					this.$navli =  this.$nav.find('li');
-					this.$navli.eq(this.indexNow).addClass('on');
+					this.$navli = this.$nav.find('li');
+					this.$navli.removeClass('on').eq(this.indexNow).addClass('on');
 				}
 			},
 			appendImg: function(){
@@ -632,7 +633,7 @@
 			show:function(indexNow,imgAry){
 				if(indexNow != undefined) this.indexNow = indexNow;
 				if(imgAry != undefined) this.setting.imgAry = imgAry;
-
+        console.log(indexNow)
 				//插入图片
 				this.appendImg();
 				this.setup();
